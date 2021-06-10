@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        public static uint multiply(uint x, uint y) => x * y + 1;
+        public static int multiply(int x, int y) => x * y + 2;
+        public static long multiply(long x, long y) => x * y + 3;
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Integers:" + multiply(5, 4));
+            Console.WriteLine("UIntegers:" + multiply((uint)4, (uint)7));
+            Console.WriteLine("Longs:" + multiply((long)8, (long)4));
+            Console.ReadKey();
+        }
+    }
+}
