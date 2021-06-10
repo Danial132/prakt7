@@ -8,25 +8,22 @@ namespace ConsoleApp8
 {
     class Program
     {
-            static uint AlgPr(uint n)
+        static int Index(int[] array, int lenght)
+        {
+            if (lenght == 0)
             {
-                if (n == 0)
-                {
-                    return 1;
-                }
-                return AlgPr(n - 1) + 1; ;
+                return lenght;
             }
-            static string Recursive(uint i, uint n)
-            {
-                if (i > n) return "";
-                return $"{i} {Recursive(i + 1, n)}";
-            }
-            static void Main(string[] args)
-            {
-                Console.Write("N = ");
-                var N = Convert.ToUInt32(Console.ReadLine());
-                Console.WriteLine(Recursive(1, N));
-                Console.ReadKey();
-            }
+
+            var i = Index(array, lenght - 1);
+            return array[lenght] > array[i] ? lenght : i;
         }
+
+        static void Main(string[] args)
+        {
+            var arr = new[] { 3, 2, 8, 4, 1, 9, 6, 0, 5, 7 };
+            Console.WriteLine("Iндекс максимального елемента масива: " + Index(arr, arr.Length - 1));
+            Console.ReadLine();
+        }
+    }
 }
